@@ -2,9 +2,14 @@ name: front-react-app-ci
 on: 
   pull_request_review:
     types: ["submitted"]
+  pull_request:
+    types: ["opened"]
   push: 
     branches:
         - main
+defaults:
+  run:
+    working-directory: codebase/rdicidr-0.1.0
 jobs:
   ci:
     runs-on: ubuntu-latest
