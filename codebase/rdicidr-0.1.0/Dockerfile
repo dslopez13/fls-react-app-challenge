@@ -10,12 +10,10 @@ COPY . .
 
 RUN npm run build
 
-FROM
+FROM nginx:stable-alpine
 
-WORKDIR
+COPY --from=build /app/build /usr/share/nginx/html
 
-COPY
+EXPOSE 80
 
-RUN 
-
-ENTRYPOINT 
+CMD [ "nginx". '-g', 'daemon off;' ] 
