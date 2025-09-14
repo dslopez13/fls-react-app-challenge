@@ -2,6 +2,9 @@ name: front-react-app-ci
 on: 
   pull_request_review:
     types: ["submitted"]
+  push: 
+    branches:
+        - main
 jobs:
   ci:
     runs-on: ubuntu-latest
